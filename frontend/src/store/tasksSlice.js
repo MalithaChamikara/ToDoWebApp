@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_URL } from "../config";
+import  {API_URL}  from "../config/apiConfig";
 
 
 // Async thunks for API calls
@@ -11,9 +11,11 @@ export const fetchTasks = createAsyncThunk("tasks/fetchTasks", async () => {
 
 export const createTask = createAsyncThunk(
   "tasks/createTask",
-  async (taskData) => {
+  async (taskData, { dispatch }) => {
     const response = await axios.post(API_URL, taskData);
+    await dispatch(fetchTasks()); // Refresh tasks after creation
     return response.data;
+    
   }
 );
 
