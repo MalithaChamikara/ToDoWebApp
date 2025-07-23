@@ -46,7 +46,7 @@ services:
 
   frontend:
     build:
-      context: ./todo-frontend
+      context: ./frontend
       dockerfile: Dockerfile
     container_name: todo_frontend
     environment:
