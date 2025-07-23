@@ -1,13 +1,28 @@
-/bin/
-/obj/
-/*.csproj.user *.suo *.user *.userosscache *.sln.docstates
+# .NET
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
+# Node.js
 node_modules/
 dist/
 build/
 
+# IDEs and editors
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Misc
 *.log
 *.bak
 *.swp
-
 .env
