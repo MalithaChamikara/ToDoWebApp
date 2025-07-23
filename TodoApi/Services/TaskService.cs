@@ -54,9 +54,4 @@ public class TaskService : ITaskService
 
         return await _repository.CompleteTaskAsync(id);
     }
-
-    Task<IEnumerable<TaskItem>> ITaskService.GetRecentTasksAsync(int count)
-    {
-        throw new NotImplementedException();
-    }
 }

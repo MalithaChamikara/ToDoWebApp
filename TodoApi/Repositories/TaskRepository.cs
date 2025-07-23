@@ -47,8 +47,4 @@ public class TaskRepository : ITaskRepository
         return true;
     }
 
-    Task<IEnumerable<TaskItem>> ITaskRepository.GetRecentTasksAsync(int count)
-    {
-        throw new NotImplementedException();
-    }
 }

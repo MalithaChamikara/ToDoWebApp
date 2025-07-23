@@ -28,7 +28,7 @@ services:
       dockerfile: Dockerfile
     container_name: todo_backend
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:5000
       - ConnectionStrings__DefaultConnection=Host=database;Port=5432;Database=todo_db;Username=postgres;Password=admin123
     ports:

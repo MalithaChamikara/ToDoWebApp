@@ -5,6 +5,15 @@ using TodoApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddDbContext<TodoDbContext>(options =>
@@ -15,6 +24,7 @@ builder.Services.AddScoped<ITaskService, TaskService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
