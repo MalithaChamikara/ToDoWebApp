@@ -1,0 +1,13 @@
+/bin/
+/obj/
+/*.csproj.user *.suo *.user *.userosscache *.sln.docstates
+
+node_modules/
+dist/
+build/
+
+*.log
+*.bak
+*.swp
+
+.env
