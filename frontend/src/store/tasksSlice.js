@@ -13,7 +13,6 @@ export const createTask = createAsyncThunk(
   "tasks/createTask",
   async (taskData, { dispatch }) => {
     const response = await axios.post(API_URL, taskData);
-    await dispatch(fetchTasks()); // Refresh tasks after creation
     return response.data;
     
   }
