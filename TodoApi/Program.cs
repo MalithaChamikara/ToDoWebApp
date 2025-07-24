@@ -25,8 +25,14 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseCors("AllowAllOrigins");
-app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+// Apply migrations on startup
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<TodoDbContext>();
+    dbContext.Database.Migrate();
+}
 
 app.Run();
